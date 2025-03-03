@@ -1,0 +1,122 @@
+---
+title: "Quarto Workshop Series: Stunning and Effective Slides"
+date: "03/11/2025"
+date-format: "M/D/YYYY"
+format:
+  revealjs:
+    center: false
+    logo: "logos/ccidm-cpp logo.png"
+    theme: theme.scss
+    slide-number: true
+    toc: true
+    #chalkboard: true #cannot use with self-contained
+    embed-resources: true
+    multiplex: true
+    width: 1600
+    height: 900
+    margin: 0.1
+    minScale: 0.2
+    maxScale: 2.0
+---
+
+# Greetings and Introduction of Presenters
+
+-   Jae Jung, Ph.D., Professor of Marketing
+-   Carsten Lange, Professor of Economics
+-   Jarrod Griffin, MSDM Student
+
+# Announcement
+
+-   The workshop will be Recorded and will be available later
+-   Workshop materials available at <somewhere.home>.
+-   Questions 
+
+# Overall Agenda
+
+::: incremental
+1.  Expected Learning outcomes
+2.  Presentation formats (5 min)
+3.  Revealjs Presentation Basics: Create dynamic, interactive presentations (15 min)
+4.  Presenting slides for maximum engagement with audience (15 min)
+5.  Reveal Themes (Sass) (15 min)
+6.  Q&A (5 min)
+:::
+
+
+# 1. Expected Learning outcomes:
+
+After taking this workshop, participants should be able to:
+
+::: {.small-medium-text .incremental}
+1.  Convert Revealjs presentation slides to other presentation formats (e.g., PPTX or Beamer). 
+2.  Build a dynamic and interactive presentation (e.g., incremental lists, speaker notes, multiple columns, and branded elements). 
+3.  Maximize engagement with audience using various engagement-enhancing features of Quarto (e.g., navigation menu, overview mode, speaker view, and chalkboard). 
+4.  Enhance presentation aesthetics by applying themes, customizing layouts, and incorporating animations or transitions. 
+5.  Customize themes using Sass variables to maintain brand consistency and create a distinctive presentation style. 
+:::
+
+# 2. Presentation Formats
+
+-   Revealjs
+-   PPTX
+
+# 3. Revealjs presentation basics with `Dr. Lange`
+
+## Topics to cover:
+
+-   Creating slides 
+-   Incremental lists 
+-   Multiple columns 
+-   Content overflow 
+-   Speaker notes 
+-   Asides & Footnotes 
+-   Footer & Logo 
+-   Slides background 
+
+[Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
+
+# 4. Presenting slides for maximum engagement with audience with `Jarrod`
+
+## Topics to Cover:
+
+-   Navigation menu 
+-   Overview mode 
+-   Slide zoom 
+-   Speaker view 
+-   Slide numbers 
+-   Print to PDF 
+-   Navigation options 
+-   Chalkboard 
+-   Multiplex 
+
+[Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
+
+# 5. Enhancing aesthetics of Slides with layouts and animations with `Dr. Lange`
+
+## Topics to Cover:
+
+-   Title slides 
+-   Slide transitions 
+-   Slide visibility 
+-   Presentation size 
+-   Absolute position 
+-   Layout helpers 
+-   Auto animate 
+-   Fragments 
+
+[Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
+
+# 6. Reveal Themes (Scss) with `Jarrod`
+
+## Topics to Cover:
+
+-   Choosing and using themes 
+-   Customizing themes 
+-   Creating themes 
+-   Sass Variables / CSS 
+
+[Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
+
+# 7. Q&A 
+
+**Thank you for joining this Quarto Workshop!**\

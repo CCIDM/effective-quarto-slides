@@ -1,0 +1,157 @@
+/*-- scss:defaults --*/
+
+// SCSS Variables for Cal Poly Pomona Branding
+$cpp-green: #00693D;
+$cpp-gold:  #FFB81C;
+
+// Secondary Colors
+$avocado:   #A6CE6E;
+$citrus:    #FF7F00;
+$white:     #FFFFFF;
+$teal:      #00838A;
+$bay-brown: #BCBAB8;
+$black:     #121212;
+$rose:      #E5A3A6;
+$eggshell:  #E2E8E0;
+
+// Typography (Using System Fonts for Compatibility)
+$font-primary: Arial, sans-serif;
+$font-secondary: Georgia, serif;
+$font-body: Arial, sans-serif;
+
+/*-- scss:rules --*/
+
+.reveal {
+  // Decide on a default color. If slides have a light background, 
+  // black is usually more readable:
+  font-family: $font-body;
+  color: $black;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    color: $cpp-green !important; 
+  }
+
+  h2 {
+    font-size: 2em;
+    color: $cpp-gold !important;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    color: $teal !important;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: $black !important;  // keep it consistent
+  }
+
+  a {
+    color: $citrus !important;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Reveal's slide background
+  .slide-background {
+    background-color: $eggshell !important;
+  }
+
+  // Controls
+  .controls {
+    color: $cpp-green !important;  // if needed to override
+  }
+
+  // Progress bar
+  .progress {
+    background-color: $cpp-green !important; 
+    height: 5px;
+
+    span {
+      background-color: $cpp-gold !important;
+    }
+  }
+
+  
+
+}
+
+/* For code blocks in Quarto Reveal.js slides */
+.reveal pre code {
+  background-color: $cpp-green;    /* or $cpp-green if you want a green background */
+  color: $white;
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  border: 2px solid $avocado;
+  /* If you want white text on green instead:
+  background-color: $cpp-green;
+  color: $white;
+  */
+}
+
+
+// Code blocks
+pre code {
+  background: $black;
+  color: $cpp-gold;
+  font-size: 1em;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+//Bullets
+.reveal ul {
+  list-style-type: disc;
+  font-size: 1em;
+  margin-left: 1.5em; 
+
+  ul {
+    list-style-type: circle; 
+    font-size: 0.9em;        
+    margin-left: 1.6em;      
+
+    ul {
+      list-style-type: square;
+      font-size: 0.8em;       
+      margin-left: 1.7em;
+      
+    }
+  }
+}
+
+// Highlight class
+.reveal .highlight {
+  background-color: $citrus; 
+  color: $white;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+}
+
+// Logo class
+.reveal .slide-logo {
+  
+  bottom: 10px !important;
+  right: 10px !important;
+  width: 200px !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+
+/* Keyframes outside of .reveal */
+@keyframes progressColor {
+  0%   { background-color: $cpp-green; }
+  100% { background-color: $cpp-gold;  }
+}
+
