@@ -1,5 +1,7 @@
 ---
 title: "Quarto Workshop Series: Stunning and Effective Slides"
+author: "Center for Customer Insights and Digital Marketing"
+institute: "Cal Poly Pomona"
 date: "03/11/2025"
 date-format: "M/D/YYYY"
 format:
@@ -9,6 +11,7 @@ format:
     theme: theme.scss
     slide-number: true
     toc: true
+    toc-depth: 1
     #chalkboard: true #cannot use with self-contained
     embed-resources: true
     multiplex: true
@@ -19,11 +22,11 @@ format:
     maxScale: 2.0
 ---
 
-# Greetings and Introduction of Presenters
+# Greetings and Introduction of the Team
 
--   Jae Jung, Ph.D., Professor of Marketing
--   Carsten Lange, Professor of Economics
--   Jarrod Griffin, MSDM Student
+-   Jae Jung, Ph.D., Professor of Marketing, Moderator
+-   Carsten Lange, Ph.D., Professor of Economics, Presenter
+-   Jarrod Griffin, Master's Student, Presenter
 
 # Announcement
 
@@ -39,8 +42,9 @@ format:
 2.  Presentation formats (5 min)
 3.  Revealjs Presentation Basics: Create dynamic, interactive presentations (15 min)
 4.  Presenting slides for maximum engagement with audience (15 min)
-5.  Reveal Themes (Sass) (15 min)
-6.  Q&A (5 min)
+5.  Enhancing aesthetics of Slides with layouts and animations (15 min)
+6.  Reveal Themes (Sass) (15 min)
+7.  Q&A (5 min)
 :::
 
 
@@ -56,7 +60,7 @@ After taking this workshop, participants should be able to:
 5.  Customize themes using Sass variables to maintain brand consistency and create a distinctive presentation style. 
 :::
 
-# 2. Presentation Formats
+# 2. Presentation Formats with `Dr. Lange`
 
 -   Revealjs
 -   PPTX
@@ -118,15 +122,17 @@ After taking this workshop, participants should be able to:
 
 ## Reveal Themes (SCSS)
 
-RevealJS allows us to use SCSS for more powerful theming. In this section, we'll look at how our SCSS file defines styles for our presentation.
+-   `RevealJS` allows us to use SCSS for more powerful theming. In this section, we'll look at how our SCSS file defines styles for our presentation.
 
-**Key concepts:**
+-   **Key concepts:**
 
-- **SCSS Variables:** Reusable values for colors, fonts, etc.
-- **SCSS Rules:** Custom styles for headings, text, code blocks, and more.
-- **Integration:** How our SCSS theme overrides default RevealJS styles.
+    - **SCSS Variables:** Reusable values for colors, fonts, etc.
+    - **SCSS Rules:** Custom styles for headings, text, code blocks, and more.
+    - **Integration:** How our SCSS theme overrides default RevealJS styles.
 
-Below is a snippet from our `theme.scss` file (for demonstration):
+. . .
+
+-   Below is a snippet from our `theme.scss` file (for demonstration):
 
 ```scss
 /* SCSS Variables for Cal Poly Pomona Branding */
@@ -154,9 +160,14 @@ $font-body: Arial, sans-serif;
 
 RevealJS offers a variety of built-in themes. To choose or use a theme:
 
+::: {.incremental}
 1. **Select a Theme:** You can either choose a built-in theme or provide your own via a custom SCSS file.
 <https://quarto.org/docs/presentations/revealjs/themes.html>
+
 2. **Link the Theme:** In your YAML header, set the `theme` option to your SCSS file. For example:
+:::
+
+. . .
 
 ```yaml
 format:
@@ -169,7 +180,13 @@ This tells RevealJS to use your custom styling for the presentation.
 
 ## Customizing Themes
 
-Customization allows your slides to reflect your branding. With SCSS, you can easily override default styles. For example, to change the style of your headings and links, you might use:
+::: callout-tip
+-   Customization allows your slides to reflect your branding. 
+-   With SCSS, you can easily override default styles. 
+-   For example, to change the style of your headings and links, you might use:
+:::
+
+. . .
 
 ```scss
 .reveal h1, .reveal h2, .reveal h3 {
@@ -185,57 +202,65 @@ Customization allows your slides to reflect your branding. With SCSS, you can ea
 }
 ```
 
-Experiment with these rules to adjust colors, fonts, and layout elements to your liking.
+-   Experiment with these rules to adjust colors, fonts, and layout elements to your liking.
 <https://quarto.org/docs/presentations/revealjs/themes.html>
 
 
 ## Creating Themes
 
-Creating your own theme involves:
+::: incremental
+-   Creating your own theme involves:
 
-1. **Starting from Scratch:** Create a new SCSS file.
-2. **Defining Variables:** Set up your color palette, typography, and other style constants.
-3. **Writing Rules:** Develop CSS rules targeting RevealJS slide elements.
-4. **Linking in Quarto:** Reference your SCSS file in the YAML header as shown earlier.
+    1. **Starting from Scratch:** Create a new SCSS file.
+    2. **Defining Variables:** Set up your color palette, typography, and other style constants.
+    3. **Writing Rules:** Develop CSS rules targeting RevealJS slide elements.
+    4. **Linking in Quarto:** Reference your SCSS file in the YAML header as shown earlier.
 
-This process gives you full control over your presentation’s appearance.
-
+-   This process gives you full control over your presentation’s appearance.
+:::
 
 ## Sass Variables / CSS
 
-Sass variables are at the core of our theme’s flexibility. For instance:
+-   Sass variables are at the core of our theme’s flexibility. For instance:
 
-- **$cpp-green:** Used for primary headings and controls.
-- **$cpp-gold:** Defines secondary highlights and accents.
-- **$teal, $citrus, etc.:** Additional colors for links, progress bars, and code blocks.
+    - **$cpp-green:** Used for primary headings and controls.
+    - **$cpp-gold:** Defines secondary highlights and accents.
+    - **$teal, $citrus, etc.:** Additional colors for links, progress bars, and code blocks.
 
-Changing a variable’s value in one place updates your entire theme—making maintenance and updates very efficient.
+. . .
+
+-   Changing a variable’s value in one place updates your entire theme—making maintenance and updates very efficient.
 
 
 ## Demo: Applying the Theme
 
-Let's see the custom theme in action!  
-Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.
+-   Let's see the custom theme in action!  
+-   Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.
 
-**Live Experiment:**  
-Try modifying a variable (e.g., `$cpp-green`) in your `theme.scss` file, then refresh the presentation to observe the changes.
+. . .
+
+|   **Live Experiment:**  
+
+. . .
+
+-   Try modifying a variable (e.g., `$cpp-green`) in your `theme.scss` file, then refresh the presentation to observe the changes.
 
 
 ## Conclusion
 
-Today we covered:
+-   Today we covered:
 
-- **Reveal Themes (SCSS):** Understanding how SCSS integrates with RevealJS.
-- **Choosing & Using Themes:** Linking and selecting themes via the YAML header.
-- **Customizing Themes:** Overriding default styles with your own SCSS.
-- **Creating Themes:** Building a custom theme from scratch.
-- **Sass Variables / CSS:** Using variables for efficient, consistent styling.
+    - **Reveal Themes (SCSS):** Understanding how SCSS integrates with RevealJS.
+    - **Choosing & Using Themes:** Linking and selecting themes via the YAML header.
+    - **Customizing Themes:** Overriding default styles with your own SCSS.
+    - **Creating Themes:** Building a custom theme from scratch.
+    - **Sass Variables / CSS:** Using variables for efficient, consistent styling.
 
-Feel free to experiment with the code and make the theme your own!
+- Feel free to experiment with the code and make the theme your own!
 
 
 ## Thank You!
 
-# 7. Q&A 
+# Q&A 
 
 **Thank you for joining this Quarto Workshop!**\
