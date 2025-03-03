@@ -28,7 +28,8 @@ format:
 # Announcement
 
 -   The workshop will be Recorded and will be available later
--   Workshop materials available at <somewhere.home>.
+-   Workshop materials available at <https://github.com/CCIDM/effective-quarto-slides>.
+-   Live slides available at <https://ccidm.github.io/effective-quarto-slides>
 -   Questions 
 
 # Overall Agenda
