@@ -239,7 +239,7 @@ This tells RevealJS to use your custom styling for the presentation.
 
 . . .
 
-|   **Live Experiment:**  
+|      **Live Experiment:**  
 
 . . .
 
