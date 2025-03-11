@@ -40,11 +40,10 @@ format:
 ::: incremental
 1.  Expected Learning outcomes
 2.  Presentation formats (5 min)
-3.  Revealjs Presentation Basics: Create dynamic, interactive presentations (15 min)
+3.  Enhancing Slide Aesthetics and Reveal.js Basics (15 min)
 4.  Presenting slides for maximum engagement with audience (15 min)
-5.  Enhancing aesthetics of Slides with layouts and animations (15 min)
-6.  Reveal Themes (Sass) (15 min)
-7.  Q&A (5 min)
+5.  Reveal Themes (Sass) (15 min)
+6.  Q&A (5 min)
 :::
 
 
@@ -52,7 +51,7 @@ format:
 
 After taking this workshop, participants should be able to:
 
-::: {.small-medium-text .incremental}
+::: {.medium-small .incremental}
 1.  Convert Revealjs presentation slides to other presentation formats (e.g., PPTX or Beamer). 
 2.  Build a dynamic and interactive presentation (e.g., incremental lists, speaker notes, multiple columns, and branded elements). 
 3.  Maximize engagement with audience using various engagement-enhancing features of Quarto (e.g., navigation menu, overview mode, speaker view, and chalkboard). 
@@ -65,13 +64,16 @@ After taking this workshop, participants should be able to:
 -   Revealjs
 -   PPTX
 
-# 3. Revealjs presentation basics with `Dr. Lange`
+# 3. Enhancing Slide Aesthetics and Reveal.js Basics with `Dr. Lange`
 
 ## Topics to cover:
 
--   Creating slides 
+-   Title slides 
+-   Slide transitions 
+-   Slide visibility 
+-   Fragments 
+-   Numbering code lines
 -   Incremental lists 
--   Multiple columns 
 -   Content overflow 
 -   Speaker notes 
 -   Asides & Footnotes 
@@ -88,30 +90,17 @@ After taking this workshop, participants should be able to:
 -   Overview mode 
 -   Slide zoom 
 -   Speaker view 
--   Slide numbers 
 -   Print to PDF 
--   Navigation options 
 -   Chalkboard 
 -   Multiplex 
 
 [Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
 
-# 5. Enhancing aesthetics of Slides with layouts and animations with `Dr. Lange`
+::: {.notes}
+Slide zoom is opt on mac, alt on windows
+:::
 
-## Topics to Cover:
-
--   Title slides 
--   Slide transitions 
--   Slide visibility 
--   Presentation size 
--   Absolute position 
--   Layout helpers 
--   Auto animate 
--   Fragments 
-
-[Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
-
-# 6. Reveal Themes (Scss) with `Jarrod`
+# 5. Reveal Themes (Scss) with `Jarrod`
 
 ## Topics to Cover:
 
@@ -120,40 +109,7 @@ After taking this workshop, participants should be able to:
 -   Creating themes 
 -   Sass Variables / CSS 
 
-## Reveal Themes (SCSS)
 
--   `RevealJS` allows us to use SCSS for more powerful theming. In this section, we'll look at how our SCSS file defines styles for our presentation.
-
--   **Key concepts:**
-
-    - **SCSS Variables:** Reusable values for colors, fonts, etc.
-    - **SCSS Rules:** Custom styles for headings, text, code blocks, and more.
-    - **Integration:** How our SCSS theme overrides default RevealJS styles.
-
-. . .
-
--   Below is a snippet from our `theme.scss` file (for demonstration):
-
-```scss
-/* SCSS Variables for Cal Poly Pomona Branding */
-$cpp-green: #00693D;
-$cpp-gold:  #FFB81C;
-
-// Typography
-$font-primary: Arial, sans-serif;
-$font-body: Arial, sans-serif;
-
-.reveal {
-  font-family: $font-body;
-  color: $black;
-
-  h1 {
-    font-size: 2.5em;
-    color: $cpp-green !important;
-  }
-  // ...
-}
-```
 
 
 ## Choosing and Using Themes
@@ -219,6 +175,41 @@ This tells RevealJS to use your custom styling for the presentation.
 -   This process gives you full control over your presentation’s appearance.
 :::
 
+## Reveal Themes (SCSS)
+
+-   `RevealJS` allows us to use SCSS for more powerful theming. In this section, we'll look at how our SCSS file defines styles for our presentation.
+
+-   **Key concepts:**
+
+    - **SCSS Variables:** Reusable values for colors, fonts, etc.
+    - **SCSS Rules:** Custom styles for headings, text, code blocks, and more.
+    - **Integration:** How our SCSS theme overrides default RevealJS styles.
+
+. . .
+
+-   Below is a snippet from our `theme.scss` file (for demonstration):
+
+```scss
+/* SCSS Variables for Cal Poly Pomona Branding */
+$cpp-green: #00693D;
+$cpp-gold:  #FFB81C;
+
+// Typography
+$font-primary: Arial, sans-serif;
+$font-body: Arial, sans-serif;
+
+.reveal {
+  font-family: $font-body;
+  color: $black;
+
+  h1 {
+    font-size: 2.5em;
+    color: $cpp-green !important;
+  }
+  // ...
+}
+```
+
 ## Sass Variables / CSS
 
 -   Sass variables are at the core of our theme’s flexibility. For instance:
@@ -234,8 +225,8 @@ This tells RevealJS to use your custom styling for the presentation.
 
 ## Demo: Applying the Theme
 
--   Let's see the custom theme in action!  
--   Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.
+- <span class="fragment fade-in-then-out">Let's see the custom theme in action!</span>
+- <span class="fragment fade-in-then-out">Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.</span>
 
 . . .
 
@@ -263,4 +254,4 @@ This tells RevealJS to use your custom styling for the presentation.
 
 # Q&A 
 
-**Thank you for joining this Quarto Workshop!**\
+**Thank you for joining this Quarto Workshop!**
