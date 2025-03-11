@@ -90,13 +90,15 @@ After taking this workshop, participants should be able to:
 -   Overview mode 
 -   Slide zoom 
 -   Speaker view 
--   Slide numbers 
 -   Print to PDF 
--   Navigation options 
 -   Chalkboard 
 -   Multiplex 
 
 [Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
+
+::: {.notes}
+Slide zoom is opt on mac, alt on windows
+:::
 
 # 5. Reveal Themes (Scss) with `Jarrod`
 

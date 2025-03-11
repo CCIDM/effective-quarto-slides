@@ -1,6 +1,10 @@
+/*----------------------------------------
+  1. DEFAULTS
+  (Quarto requires at least one boundary)
+----------------------------------------*/
 /*-- scss:defaults --*/
 
-// SCSS Variables for Cal Poly Pomona Branding
+// Cal Poly Pomona Branding
 $cpp-green: #00693D;
 $cpp-gold:  #FFB81C;
 
@@ -14,19 +18,34 @@ $black:     #121212;
 $rose:      #E5A3A6;
 $eggshell:  #E2E8E0;
 
-// Typography (Using System Fonts for Compatibility)
+// Typography
 $font-primary: Arial, sans-serif;
 $font-secondary: Georgia, serif;
 $font-body: Arial, sans-serif;
 
+
+
+/*----------------------------------------
+  2. RULES
+----------------------------------------*/
 /*-- scss:rules --*/
 
-.reveal {
-  // Decide on a default color. If slides have a light background, 
-  // black is usually more readable:
-  font-family: $font-body;
-  color: $black;
+/* Global code block fallback (outside .reveal) */
+pre code {
+  background: $black;
+  color: $cpp-gold;
+  font-size: 1em;
+  padding: 15px;
+  border-radius: 5px;
+}
 
+/* Reveal-specific styles */
+.reveal {
+  /* Base font and color for reveal slides */
+  font-family: $font-body;
+  color: $black !important;
+
+  /* Headings */
   h1, h2, h3, h4, h5, h6 {
     font-family: $font-primary;
     font-weight: bold;
@@ -34,7 +53,7 @@ $font-body: Arial, sans-serif;
 
   h1 {
     font-size: 2.5em;
-    color: $cpp-green !important; 
+    color: $cpp-green !important;
   }
 
   h2 {
@@ -50,31 +69,31 @@ $font-body: Arial, sans-serif;
   p {
     font-size: 1em;
     line-height: 1.5;
-    color: $black !important;  // keep it consistent
+    color: $black !important;
   }
 
+  /* Links */
   a {
     color: $citrus !important;
     text-decoration: none;
-
     &:hover {
       text-decoration: underline;
     }
   }
 
-  // Reveal's slide background
+  /* Slide background */
   .slide-background {
     background-color: $eggshell !important;
   }
 
-  // Controls
+  /* Controls */
   .controls {
-    color: $cpp-green !important;  // if needed to override
+    color: $cpp-green !important;
   }
 
-  // Progress bar
+  /* Progress bar */
   .progress {
-    background-color: $cpp-green !important; 
+    background-color: $cpp-green !important;
     height: 5px;
 
     span {
@@ -82,114 +101,94 @@ $font-body: Arial, sans-serif;
     }
   }
 
-  
+  /* Code blocks specifically in .reveal slides */
+  pre code {
+    background-color: $cpp-green;
+    color: $white;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    border: 2px solid $avocado;
+  }
 
-}
+  /* Bulleted lists in slides */
+  .slides section ul {
+    list-style-type: disc;
+    font-size: 1em;
+    margin-left: 1.5em;
 
-/* For code blocks in Quarto Reveal.js slides */
-.reveal pre code {
-  background-color: $cpp-green;    /* or $cpp-green if you want a green background */
-  color: $white;
-  font-size: 1em;
-  padding: 1em;
-  border-radius: 5px;
-  border: 2px solid $avocado;
-  /* If you want white text on green instead:
-  background-color: $cpp-green;
-  color: $white;
-  */
-}
-
-
-// Code blocks
-pre code {
-  background: $black;
-  color: $cpp-gold;
-  font-size: 1em;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-//Bullets
-.reveal .slides section ul {
-  list-style-type: disc;
-  font-size: 1em;
-  margin-left: 1.5em; 
-
-  ul {
-    list-style-type: square; 
-    font-size: 0.9em;        
-    margin-left: 1.6em;      
-
+    // Second-level bullets
     ul {
-      list-style-type: circle;
-      font-size: 0.8em;       
-      margin-left: 1.7em;
-      
+      list-style-type: square;
+      font-size: 0.9em;
+      margin-left: 1.6em;
+
+      // Third-level bullets
+      ul {
+        list-style-type: circle;
+        font-size: 0.8em;
+        margin-left: 1.7em;
+      }
     }
+  }
+
+  /* Highlight class */
+  .highlight {
+    background-color: $citrus;
+    color: $white;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+  }
+
+  /* Logo class */
+  .slide-logo {
+    bottom: 10px !important;
+    right: 10px !important;
+    width: 200px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Font Size Utility Classes */
+  .small {
+    font-size: 0.75rem;
+  }
+
+  .medium-small {
+    font-size: 0.875rem;
+  }
+
+  .large-small {
+    font-size: 1rem;
+  }
+
+  .small-medium {
+    font-size: 1.125rem;
+  }
+
+  .medium {
+    font-size: 1.25rem;
+  }
+
+  .large-medium {
+    font-size: 1.375rem;
+  }
+
+  .small-large {
+    font-size: 1.5rem;
+  }
+
+  .medium-large {
+    font-size: 1.625rem;
+  }
+
+  .large {
+    font-size: 1.75rem;
   }
 }
 
-// Highlight class
-.reveal .highlight {
-  background-color: $citrus; 
-  color: $white;
-  padding: 0.2em 0.4em;
-  border-radius: 0.2em;
-}
-
-// Logo class
-.reveal .slide-logo {
-  
-  bottom: 10px !important;
-  right: 10px !important;
-  width: 200px !important;
-  height: auto !important;
-  max-height: none !important;
-}
-
-
-/* Keyframes outside of .reveal */
+/* Keyframes (can be placed anywhere outside a nested block) */
 @keyframes progressColor {
   0%   { background-color: $cpp-green; }
-  100% { background-color: $cpp-gold;  }
+  100% { background-color: $cpp-gold; }
 }
-
-// Custom Font Size Utility Classes for Quarto Revealjs Slides
-
-.small {
-  font-size: 0.75rem;
-}
-
-.medium-small {
-  font-size: 0.875rem;
-}
-
-.large-small {
-  font-size: 1rem;
-}
-
-.small-medium {
-  font-size: 1.125rem;
-}
-
-.medium {
-  font-size: 1.25rem;
-}
-
-.large-medium {
-  font-size: 1.375rem;
-}
-
-.small-large {
-  font-size: 1.5rem;
-}
-
-.medium-large {
-  font-size: 1.625rem;
-}
-
-.large {
-  font-size: 1.75rem;
-}
-
