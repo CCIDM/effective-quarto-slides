@@ -40,11 +40,10 @@ format:
 ::: incremental
 1.  Expected Learning outcomes
 2.  Presentation formats (5 min)
-3.  Revealjs Presentation Basics: Create dynamic, interactive presentations (15 min)
+3.  Enhancing Slide Aesthetics and Reveal.js Basics (15 min)
 4.  Presenting slides for maximum engagement with audience (15 min)
-5.  Enhancing aesthetics of Slides with layouts and animations (15 min)
-6.  Reveal Themes (Sass) (15 min)
-7.  Q&A (5 min)
+5.  Reveal Themes (Sass) (15 min)
+6.  Q&A (5 min)
 :::
 
 
@@ -65,13 +64,16 @@ After taking this workshop, participants should be able to:
 -   Revealjs
 -   PPTX
 
-# 3. Revealjs presentation basics with `Dr. Lange`
+# 3. Enhancing Slide Aesthetics and Reveal.js Basics with `Dr. Lange`
 
 ## Topics to cover:
 
--   Creating slides 
+-   Title slides 
+-   Slide transitions 
+-   Slide visibility 
+-   Fragments 
+-   Numbering code lines
 -   Incremental lists 
--   Multiple columns 
 -   Content overflow 
 -   Speaker notes 
 -   Asides & Footnotes 
@@ -96,22 +98,10 @@ After taking this workshop, participants should be able to:
 
 [Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
 
-# 5. Enhancing aesthetics of Slides with layouts and animations with `Dr. Lange`
-
-## Topics to Cover:
-
--   Title slides 
--   Slide transitions 
--   Slide visibility 
--   Presentation size 
--   Absolute position 
--   Layout helpers 
--   Auto animate 
--   Fragments 
 
 [Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
 
-# 6. Reveal Themes (Scss) with `Jarrod`
+# 5. Reveal Themes (Scss) with `Jarrod`
 
 ## Topics to Cover:
 
