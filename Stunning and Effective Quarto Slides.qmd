@@ -98,9 +98,6 @@ After taking this workshop, participants should be able to:
 
 [Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
 
-
-[Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
-
 # 5. Reveal Themes (Scss) with `Jarrod`
 
 ## Topics to Cover:
@@ -110,40 +107,7 @@ After taking this workshop, participants should be able to:
 -   Creating themes 
 -   Sass Variables / CSS 
 
-## Reveal Themes (SCSS)
 
--   `RevealJS` allows us to use SCSS for more powerful theming. In this section, we'll look at how our SCSS file defines styles for our presentation.
-
--   **Key concepts:**
-
-    - **SCSS Variables:** Reusable values for colors, fonts, etc.
-    - **SCSS Rules:** Custom styles for headings, text, code blocks, and more.
-    - **Integration:** How our SCSS theme overrides default RevealJS styles.
-
-. . .
-
--   Below is a snippet from our `theme.scss` file (for demonstration):
-
-```scss
-/* SCSS Variables for Cal Poly Pomona Branding */
-$cpp-green: #00693D;
-$cpp-gold:  #FFB81C;
-
-// Typography
-$font-primary: Arial, sans-serif;
-$font-body: Arial, sans-serif;
-
-.reveal {
-  font-family: $font-body;
-  color: $black;
-
-  h1 {
-    font-size: 2.5em;
-    color: $cpp-green !important;
-  }
-  // ...
-}
-```
 
 
 ## Choosing and Using Themes
@@ -209,6 +173,41 @@ This tells RevealJS to use your custom styling for the presentation.
 -   This process gives you full control over your presentation’s appearance.
 :::
 
+## Reveal Themes (SCSS)
+
+-   `RevealJS` allows us to use SCSS for more powerful theming. In this section, we'll look at how our SCSS file defines styles for our presentation.
+
+-   **Key concepts:**
+
+    - **SCSS Variables:** Reusable values for colors, fonts, etc.
+    - **SCSS Rules:** Custom styles for headings, text, code blocks, and more.
+    - **Integration:** How our SCSS theme overrides default RevealJS styles.
+
+. . .
+
+-   Below is a snippet from our `theme.scss` file (for demonstration):
+
+```scss
+/* SCSS Variables for Cal Poly Pomona Branding */
+$cpp-green: #00693D;
+$cpp-gold:  #FFB81C;
+
+// Typography
+$font-primary: Arial, sans-serif;
+$font-body: Arial, sans-serif;
+
+.reveal {
+  font-family: $font-body;
+  color: $black;
+
+  h1 {
+    font-size: 2.5em;
+    color: $cpp-green !important;
+  }
+  // ...
+}
+```
+
 ## Sass Variables / CSS
 
 -   Sass variables are at the core of our theme’s flexibility. For instance:
@@ -224,8 +223,8 @@ This tells RevealJS to use your custom styling for the presentation.
 
 ## Demo: Applying the Theme
 
--   Let's see the custom theme in action!  
--   Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.
+- <span class="fragment fade-in-then-out">Let's see the custom theme in action!</span>
+- <span class="fragment fade-in-then-out">Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.</span>
 
 . . .
 
