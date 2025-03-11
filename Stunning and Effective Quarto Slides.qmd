@@ -254,4 +254,8 @@ $font-body: Arial, sans-serif;
 
 # Q&A 
 
+-   Sample presentation template for the Student Project
+    -   Github Repo: <https://jmjung.quarto.pub/case31-presentatoin/>
+    -   Presentation Slides: <https://jmjung.quarto.pub/case31-presentatoin/>
+
 **Thank you for joining this Quarto Workshop!**
