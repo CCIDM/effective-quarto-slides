@@ -175,7 +175,7 @@ This tells RevealJS to use your custom styling for the presentation.
 -   This process gives you full control over your presentation’s appearance.
 :::
 
-## Reveal Themes (SCSS)
+## Reveal Themes (SCSS) {style="height:1000px;"}
 
 -   `RevealJS` allows us to use SCSS for more powerful theming. In this section, we'll look at how our SCSS file defines styles for our presentation.
 
@@ -225,8 +225,8 @@ $font-body: Arial, sans-serif;
 
 ## Demo: Applying the Theme
 
-- <span class="fragment fade-in-then-out">Let's see the custom theme in action!</span>
-- <span class="fragment fade-in-then-out">Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.</span>
+- [Let's see the custom theme in action!]{.fragment .fade-in-then-semi-out}
+- [Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.]{.fragment .fade-in-then-semi-out}
 
 . . .
 
@@ -256,6 +256,7 @@ $font-body: Arial, sans-serif;
 
 -   Sample presentation template for the Student Project
     -   Github Repo: <https://jmjung.quarto.pub/case31-presentatoin/>
+        -   Test bulet points
     -   Presentation Slides: <https://jmjung.quarto.pub/case31-presentatoin/>
 
 **Thank you for joining this Quarto Workshop!**
