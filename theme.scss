@@ -30,15 +30,6 @@ $font-body: Arial, sans-serif;
 ----------------------------------------*/
 /*-- scss:rules --*/
 
-/* Global code block fallback (outside .reveal) */
-pre code {
-  background: $black;
-  color: $cpp-gold;
-  font-size: 1em;
-  padding: 15px;
-  border-radius: 5px;
-}
-
 /* Reveal-specific styles */
 .reveal {
   /* Base font and color for reveal slides */
