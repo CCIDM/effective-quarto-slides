@@ -82,6 +82,134 @@ After taking this workshop, participants should be able to:
 
 [Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
 
+## Quarto Slide Transition
+
+**none:**	No transition (switch instantly) ^[This is the default]
+
+. . .
+
+**fade:**	Cross fade
+
+. . .
+
+**slide:**	Slide horizontally
+
+
+. . .
+
+**convex:**	Slide at a convex angle
+
+
+. . .
+
+**concave:**	Slide at a concave angle
+
+
+. . .
+
+**zoom:**	Scale the incoming slide so it grows in from the center of the screen.
+
+. . .
+
+## This Slide Zooms in and Fades out {transition="zoom-in fade-out" transition-speed="slow"}
+
+You can also set the transition in the *YAML* header with:
+
+`transition: zoom-in fade-out`
+
+and 
+
+`transition-speed: slow`
+
+::: aside
+Note, the *YAML* transition cannot be overwritten by individual slides.
+:::
+
+
+
+
+## Loading the Estonia Dataset {transition="fade-in slide-out"}
+
+We use the `rio` and the `tidyverse` package to load the *Estonia* data set.
+
+The code does not matter too much.
+```{r}
+#| code-fold: true
+library(rio)
+library(tidyverse)
+DataEstonia=import("https://econ.lange-analytics.com/RData/Datasets/estonia-passenger-list.csv") 
+```
+
+## Variables in the Dataset 
+
+There are several variables in the *Estonia* dataset.
+
+Here are the variables: 
+
+::: {.incremental}
+- ID
+- First name
+- Last name
+- Country
+- Survival Status
+- Sex
+- Age
+- Category
+:::
+
+## Generating Dataset with Few Variables - First Trial
+
+```{r}
+#| code-line-numbers: "1,|2-3,|4"
+library(tidyverse)
+DataEstoniaNew=DataEstonia |> 
+               select(PassengerId, Sex, Survived)
+head(DataEstoniaNew)
+```
+
+## Generating Dataset with Few Variables - Better Flow
+
+```{r }
+#| code-line-numbers: "1,|2-3,|4"
+#| output-location: fragment
+library(tidyverse)
+DataEstoniaNew=DataEstonia |> 
+               select(PassengerId, Sex, Survived)
+head(DataEstoniaNew)
+```
+
+## Graphing Age and Survived
+
+```{r}
+#| output-location: slide
+#| code-line-numbers: false
+ggplot(DataEstonia, aes(x=Survived, y=Age))+
+   geom_jitter()
+```
+
+## Optional Slides Handling
+
+Should I show shameless advertising for my Machine Learning book on the next slide???
+
+No!
+
+I added `{visibility="hidden"}` after the slide's title. 
+
+However there is a more flexible way.
+
+## Shameless Advertising for Machine Learning Book {visibility="hidden"}
+
+Note, the footer link has changed
+
+ 
+
+::: footer
+<a href="https://ai.lange-analytics.com/htmlbook" target="_blank">Free Version Link</a>
+:::
+
+
+## Your Questions Please
+
 # 4. Presenting slides for maximum engagement with audience with `Jarrod`
 
 ## Topics to Cover:
