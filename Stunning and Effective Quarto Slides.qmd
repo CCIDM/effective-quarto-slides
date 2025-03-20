@@ -33,7 +33,7 @@ format:
 -   The workshop will be Recorded and will be available later
 -   Workshop materials available at <https://github.com/CCIDM/effective-quarto-slides>.
 -   Live slides available at <https://ccidm.github.io/effective-quarto-slides>
--   Questions 
+-   Questions
 
 # Overall Agenda
 
@@ -46,17 +46,16 @@ format:
 6.  Q&A (5 min)
 :::
 
-
 # 1. Expected Learning outcomes:
 
 After taking this workshop, participants should be able to:
 
 ::: {.medium-small .incremental}
-1.  Convert Revealjs presentation slides to other presentation formats (e.g., PPTX or Beamer). 
-2.  Build a dynamic and interactive presentation (e.g., incremental lists, speaker notes, multiple columns, and branded elements). 
-3.  Maximize engagement with audience using various engagement-enhancing features of Quarto (e.g., navigation menu, overview mode, speaker view, and chalkboard). 
-4.  Enhance presentation aesthetics by applying themes, customizing layouts, and incorporating animations or transitions. 
-5.  Customize themes using Sass variables to maintain brand consistency and create a distinctive presentation style. 
+1.  Convert Revealjs presentation slides to other presentation formats (e.g., PPTX or Beamer).
+2.  Build a dynamic and interactive presentation (e.g., incremental lists, speaker notes, multiple columns, and branded elements).
+3.  Maximize engagement with audience using various engagement-enhancing features of Quarto (e.g., navigation menu, overview mode, speaker view, and chalkboard).
+4.  Enhance presentation aesthetics by applying themes, customizing layouts, and incorporating animations or transitions.
+5.  Customize themes using Sass variables to maintain brand consistency and create a distinctive presentation style.
 :::
 
 # 2. Presentation Formats with `Dr. Lange`
@@ -68,35 +67,154 @@ After taking this workshop, participants should be able to:
 
 ## Topics to cover:
 
--   Title slides 
--   Slide transitions 
--   Slide visibility 
--   Fragments 
+-   Title slides
+-   Slide transitions
+-   Slide visibility
+-   Fragments
 -   Numbering code lines
--   Incremental lists 
--   Content overflow 
--   Speaker notes 
--   Asides & Footnotes 
--   Footer & Logo 
--   Slides background 
+-   Incremental lists
+-   Content overflow
+-   Speaker notes
+-   Asides & Footnotes
+-   Footer & Logo
+-   Slides background
 
 [Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
+
+## Quarto Slide Transition
+
+**none:** No transition (switch instantly) [^1]
+
+[^1]: This is the default
+
+. . .
+
+**fade:** Cross fade
+
+. . .
+
+**slide:** Slide horizontally
+
+. . .
+
+**convex:** Slide at a convex angle
+
+. . .
+
+**concave:** Slide at a concave angle
+
+. . .
+
+**zoom:** Scale the incoming slide so it grows in from the center of the screen.
+
+. . .
+
+## This Slide Zooms in and Fades out {transition="zoom-in fade-out" transition-speed="slow"}
+
+You can also set the transition in the *YAML* header with:
+
+`transition: zoom-in fade-out`
+
+and
+
+`transition-speed: slow`
+
+::: aside
+Note, the *YAML* transition cannot be overwritten by individual slides.
+:::
+
+## Loading the Estonia Dataset {transition="fade-in slide-out"}
+
+We use the `rio` and the `tidyverse` package to load the *Estonia* data set.
+
+The code does not matter too much.
+
+```{r}
+#| code-fold: true
+library(rio)
+library(tidyverse)
+DataEstonia=import("https://econ.lange-analytics.com/RData/Datasets/estonia-passenger-list.csv") 
+```
+
+## Variables in the Dataset
+
+There are several variables in the *Estonia* dataset.
+
+Here are the variables:
+
+::: incremental
+-   ID
+-   First name
+-   Last name
+-   Country
+-   Survival Status
+-   Sex
+-   Age
+-   Category
+:::
+
+## Generating Dataset with Few Variables - First Trial
+
+```{r}
+#| code-line-numbers: "1,|2-3,|4"
+library(tidyverse)
+DataEstoniaNew=DataEstonia |> 
+               select(PassengerId, Sex, Survived)
+head(DataEstoniaNew)
+```
+
+## Generating Dataset with Few Variables - Better Flow
+
+```{r }
+#| code-line-numbers: "1,|2-3,|4"
+#| output-location: fragment
+library(tidyverse)
+DataEstoniaNew=DataEstonia |> 
+               select(PassengerId, Sex, Survived)
+head(DataEstoniaNew)
+```
+
+## Graphing Age and Survived
+
+```{r}
+#| output-location: slide
+#| code-line-numbers: false
+ggplot(DataEstonia, aes(x=Survived, y=Age))+
+   geom_jitter()
+```
+
+## Optional Slides Handling
+
+- Should I show shameless advertising for my Machine Learning book on the next slide???
+    - No!
+- I added `{visibility="hidden"}` after the slide's title.
+- However there is a more flexible way.
+
+## Shameless Advertising for Machine Learning Book {visibility="hidden"}
+
+Note, the footer link has changed
+
+::: footer
+<a href="https://ai.lange-analytics.com/htmlbook" target="_blank">Free Version Link</a>
+:::
+
+## Your Questions Please
 
 # 4. Presenting slides for maximum engagement with audience with `Jarrod`
 
 ## Topics to Cover:
 
--   Navigation menu 
--   Overview mode 
--   Slide zoom 
--   Speaker view 
--   Print to PDF 
--   Chalkboard 
--   Multiplex 
+-   Navigation menu
+-   Overview mode
+-   Slide zoom
+-   Speaker view
+-   Print to PDF
+-   Chalkboard
+-   Multiplex
 
 [Demonstration to be provided separately]{style="color:blue; font-weight:bold;"}
 
-::: {.notes}
+::: notes
 Slide zoom is opt on mac, alt on windows
 :::
 
@@ -104,28 +222,23 @@ Slide zoom is opt on mac, alt on windows
 
 ## Topics to Cover:
 
--   Choosing and using themes 
--   Customizing themes 
--   Creating themes 
--   Sass Variables / CSS 
-
-
-
+-   Choosing and using themes
+-   Customizing themes
+-   Creating themes
+-   Sass Variables / CSS
 
 ## Choosing and Using Themes
 
 RevealJS offers a variety of built-in themes. To choose or use a theme:
 
-::: {.incremental}
-1. **Select a Theme:** You can either choose a built-in theme or provide your own via a custom SCSS file.
-<https://quarto.org/docs/presentations/revealjs/themes.html>
-
-2. **Link the Theme:** In your YAML header, set the `theme` option to your SCSS file. For example:
+::: incremental
+1.  **Select a Theme:** You can either choose a built-in theme or provide your own via a custom SCSS file. <https://quarto.org/docs/presentations/revealjs/themes.html>
+2.  **Link the Theme:** In your YAML header, set the `theme` option to your SCSS file. For example:
 :::
 
 . . .
 
-```yaml
+``` yaml
 format:
   revealjs:
     theme: [default, theme.scss]
@@ -133,18 +246,17 @@ format:
 
 This tells RevealJS to use your custom styling for the presentation.
 
-
 ## Customizing Themes
 
 ::: callout-tip
--   Customization allows your slides to reflect your branding. 
--   With SCSS, you can easily override default styles. 
+-   Customization allows your slides to reflect your branding.
+-   With SCSS, you can easily override default styles.
 -   For example, to change the style of your headings and links, you might use:
 :::
 
 . . .
 
-```scss
+``` scss
 .reveal h1, .reveal h2, .reveal h3 {
   font-family: $font-primary;
   font-weight: bold;
@@ -158,38 +270,32 @@ This tells RevealJS to use your custom styling for the presentation.
 }
 ```
 
--   Experiment with these rules to adjust colors, fonts, and layout elements to your liking.
-<https://quarto.org/docs/presentations/revealjs/themes.html>
-
+-   Experiment with these rules to adjust colors, fonts, and layout elements to your liking. <https://quarto.org/docs/presentations/revealjs/themes.html>
 
 ## Creating Themes
 
 ::: incremental
 -   Creating your own theme involves:
-
-    1. **Starting from Scratch:** Create a new SCSS file.
-    2. **Defining Variables:** Set up your color palette, typography, and other style constants.
-    3. **Writing Rules:** Develop CSS rules targeting RevealJS slide elements.
-    4. **Linking in Quarto:** Reference your SCSS file in the YAML header as shown earlier.
-
+    1.  **Starting from Scratch:** Create a new SCSS file.
+    2.  **Defining Variables:** Set up your color palette, typography, and other style constants.
+    3.  **Writing Rules:** Develop CSS rules targeting RevealJS slide elements.
+    4.  **Linking in Quarto:** Reference your SCSS file in the YAML header as shown earlier.
 -   This process gives you full control over your presentation’s appearance.
 :::
 
 ## Reveal Themes (SCSS) {style="height:1000px;"}
 
 -   `RevealJS` allows us to use SCSS for more powerful theming. In this section, we'll look at how our SCSS file defines styles for our presentation.
-
 -   **Key concepts:**
-
-    - **SCSS Variables:** Reusable values for colors, fonts, etc.
-    - **SCSS Rules:** Custom styles for headings, text, code blocks, and more.
-    - **Integration:** How our SCSS theme overrides default RevealJS styles.
+    -   **SCSS Variables:** Reusable values for colors, fonts, etc.
+    -   **SCSS Rules:** Custom styles for headings, text, code blocks, and more.
+    -   **Integration:** How our SCSS theme overrides default RevealJS styles.
 
 . . .
 
 -   Below is a snippet from our `theme.scss` file (for demonstration):
 
-```scss
+``` scss
 /* SCSS Variables for Cal Poly Pomona Branding */
 $cpp-green: #00693D;
 $cpp-gold:  #FFB81C;
@@ -213,46 +319,40 @@ $font-body: Arial, sans-serif;
 ## Sass Variables / CSS
 
 -   Sass variables are at the core of our theme’s flexibility. For instance:
-
-    - **$cpp-green:** Used for primary headings and controls.
-    - **$cpp-gold:** Defines secondary highlights and accents.
-    - **$teal, $citrus, etc.:** Additional colors for links, progress bars, and code blocks.
+    -   **\$cpp-green:** Used for primary headings and controls.
+    -   **\$cpp-gold:** Defines secondary highlights and accents.
+    -   **\$teal, \$citrus, etc.:** Additional colors for links, progress bars, and code blocks.
 
 . . .
 
 -   Changing a variable’s value in one place updates your entire theme—making maintenance and updates very efficient.
 
-
 ## Demo: Applying the Theme
 
-- [Let's see the custom theme in action!]{.fragment .fade-in-then-semi-out}
-- [Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.]{.fragment .fade-in-then-semi-out}
+-   [Let's see the custom theme in action!]{.fragment .fade-in-then-semi-out}
+-   [Notice how the defined styles (fonts, colors, code block designs) immediately change the look of your slides.]{.fragment .fade-in-then-semi-out}
 
 . . .
 
-|      **Live Experiment:**  
+|      **Live Experiment:**
 
 . . .
 
 -   Try modifying a variable (e.g., `$cpp-green`) in your `theme.scss` file, then refresh the presentation to observe the changes.
 
-
 ## Conclusion
 
--   Today we covered:
-
-    - **Reveal Themes (SCSS):** Understanding how SCSS integrates with RevealJS.
-    - **Choosing & Using Themes:** Linking and selecting themes via the YAML header.
-    - **Customizing Themes:** Overriding default styles with your own SCSS.
-    - **Creating Themes:** Building a custom theme from scratch.
-    - **Sass Variables / CSS:** Using variables for efficient, consistent styling.
-
+- Today we covered:
+    -   **Reveal Themes (SCSS):** Understanding how SCSS integrates with RevealJS.
+    -   **Choosing & Using Themes:** Linking and selecting themes via the YAML header.
+    -   **Customizing Themes:** Overriding default styles with your own SCSS.
+    -   **Creating Themes:** Building a custom theme from scratch.
+    -   **Sass Variables / CSS:** Using variables for efficient, consistent styling.
 - Feel free to experiment with the code and make the theme your own!
-
 
 ## Thank You!
 
-# Q&A 
+# Q&A
 
 -   Sample presentation template for the Student Project
     -   Github Repo: <https://jmjung.quarto.pub/case31-presentatoin/>

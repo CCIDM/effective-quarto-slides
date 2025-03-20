@@ -5,18 +5,19 @@
 /*-- scss:defaults --*/
 
 // Cal Poly Pomona Branding
-$cpp-green: #00693D;
+$cpp-green: #005030;
 $cpp-gold:  #FFB81C;
 
 // Secondary Colors
-$avocado:   #A6CE6E;
-$citrus:    #FF7F00;
+$avocado:   #A4D65E;
+$citrus:    #FF7500;
 $white:     #FFFFFF;
 $teal:      #00838A;
-$bay-brown: #BCBAB8;
+$bay-brown: #CFBAB0;
 $black:     #121212;
-$rose:      #E5A3A6;
+$rose:      #b52b4c;
 $eggshell:  #E2E8E0;
+
 
 // Typography
 $font-primary: Arial, sans-serif;
@@ -29,15 +30,6 @@ $font-body: Arial, sans-serif;
   2. RULES
 ----------------------------------------*/
 /*-- scss:rules --*/
-
-/* Global code block fallback (outside .reveal) */
-pre code {
-  background: $black;
-  color: $cpp-gold;
-  font-size: 1em;
-  padding: 15px;
-  border-radius: 5px;
-}
 
 /* Reveal-specific styles */
 .reveal {
@@ -64,6 +56,11 @@ pre code {
   h3 {
     font-size: 1.75em;
     color: $teal !important;
+  }
+  
+  h4 {
+    font-size: 1.50em;
+    color: $rose !important;
   }
 
   p {
@@ -116,18 +113,21 @@ pre code {
     list-style-type: disc;
     font-size: 2.5rem;
     margin-left: 1.5em;
+    color: #00838A;  // Color for first-level bullets and text
 
     // Second-level bullets
     ul {
       list-style-type: square;
       font-size: 2rem;
       margin-left: 1.6em;
+      color: #00838A;  // Color for second-level bullets and text
 
       // Third-level bullets
       ul {
         list-style-type: circle;
         font-size: 1.5rem;
         margin-left: 1.7em;
+        color: #00838A;  // Color for third-level bullets and text
       }
     }
   }
