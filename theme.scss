@@ -113,14 +113,14 @@ $font-body: Arial, sans-serif;
     list-style-type: disc;
     font-size: 2.5rem;
     margin-left: 1.5em;
-    color: #00838A;  // Color for first-level bullets and text
+    color: $teal;  // Color for first-level bullets and text
 
     // Second-level bullets
     ul {
       list-style-type: square;
       font-size: 2rem;
       margin-left: 1.6em;
-      color: #00838A;  // Color for second-level bullets and text
+      color: $teal;  // Color for second-level bullets and text
 
       // Third-level bullets
       ul {
